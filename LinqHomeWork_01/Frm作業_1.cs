@@ -124,29 +124,35 @@ namespace MyHomeWork
 
         }
 
-        bool Flag =true;
-
         private void button12_Click(object sender, EventArgs e)
         {   //上一筆
+            int num = int.Parse(textBox1.Text); 
             
+          //  int nowTop = (num * times) + 1;
+          //  int nowBottom = (num * (times + 1)) - 1;
             try
             {
-                int num = int.Parse(textBox1.Text);
-                if(Flag == true)
+                if (textchange == true)
                 {
-                    var q2 = from aa in nwDataSet1.Products.Skip(num * times).Take(num)
-                         select aa;
-               
-                    dataGridView1.DataSource = q2.ToList();
-               
-                    times -= 1;
-              
-                    Flag = !Flag;
+                    times = 1;
+                    now = num * times;
+                    
+                    var q3 = from aa in nwDataSet1.Products.Skip(nowChange-now).Take(num)
+                             select aa;
+                    afterChage = nowChange - now*2;
+                    dataGridView1.DataSource = q3.ToList();
 
+                    textchange = !textchange;
                 }
-                else
+                else 
                 {
+                    times -= 1;
+                    now = num * times;
+                    nowChange = now;
+                    var q2 = from aa in nwDataSet1.Products.Skip(Math.Abs(afterChage - now)).Take(num)
+                             select aa;
 
+                    dataGridView1.DataSource = q2.ToList();
                 }
             }
             catch (Exception ex)
@@ -155,24 +161,78 @@ namespace MyHomeWork
             }
         }
 
-        int times=0;
+        int times = 0;
+        int now;
+        int nowChange;
+        int afterChage = 0;
+
         private void button13_Click(object sender, EventArgs e)
         {   //下一筆
             //this.nwDataSet1.Products.Take(10);//Top 10 Skip(10)
 
             //Distinct()
+
+            int num = int.Parse(textBox1.Text);
+
+           
+
             try
-            {
-                times += 1;
-                int num = int.Parse(textBox1.Text);
-                var q3 = from aa in nwDataSet1.Products.Skip(num * times).Take(num)
-                         select aa;
-                dataGridView1.DataSource = q3.ToList();
+            { 
+                if (times < 0) 
+                {
+                    times = 0;
+
+                    times += 1;
+                     now = num * times;
+
+                    var q3 = from aa in nwDataSet1.Products.Skip(now).Take(num)
+                             select aa;
+                    dataGridView1.DataSource = q3.ToList();
+                }
+                else
+                {
+
+                    if (textchange == true)
+                    {
+                        times = 1;
+                        now = num * times;
+
+                        var q4 = from aa in nwDataSet1.Products.Skip(nowChange + now).Take(num)
+                                 select aa;
+                        afterChage = nowChange - now * 2;
+                        dataGridView1.DataSource = q4.ToList();
+
+                        textchange = !textchange;
+                    }
+                    else
+                    {
+                        times += 1;
+                        now = num * times;
+                        nowChange = now;
+                        var q3 = from aa in nwDataSet1.Products.Skip(Math.Abs(afterChage + now)).Take(num)
+                                 select aa;
+                        dataGridView1.DataSource = q3.ToList();
+
+                    }
+
+                    if (nwDataSet1.Products.Rows.Count < num * (times+1))
+                    {
+                        //times -= 1;
+                        MessageBox.Show("已經最後一筆了");
+                        //return;
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        bool textchange;
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textchange = true;
         }
     }
 }

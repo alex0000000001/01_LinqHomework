@@ -368,6 +368,7 @@ namespace MyHomeWork
             this.textBox1.Size = new System.Drawing.Size(180, 27);
             this.textBox1.TabIndex = 98;
             this.textBox1.Text = "10";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
