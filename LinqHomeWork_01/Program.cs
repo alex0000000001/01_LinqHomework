@@ -17,7 +17,7 @@ namespace LinqHomeWork_01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm作業_1());
+            Application.Run(new Frm作業_2());
         }
     }
 }

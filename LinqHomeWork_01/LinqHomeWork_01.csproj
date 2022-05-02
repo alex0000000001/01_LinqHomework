@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +91,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ADDataSet.xsc">
+      <DependentUpon>ADDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ADDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ADDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ADDataSet.xss">
+      <DependentUpon>ADDataSet.xsd</DependentUpon>
+    </None>
     <None Include="nwDataSet.xsc">
       <DependentUpon>nwDataSet.xsd</DependentUpon>
     </None>
