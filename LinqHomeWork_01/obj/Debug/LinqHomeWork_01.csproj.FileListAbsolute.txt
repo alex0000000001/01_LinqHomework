@@ -30,3 +30,10 @@ C:\Users\wanbo\Source\Repos\01_LinqHomework\LinqHomeWork_01\obj\Debug\LinqHomeWo
 C:\Users\wanbo\Source\Repos\01_LinqHomework\LinqHomeWork_01\bin\Debug\LinqHomeWork_01.exe.config
 C:\Users\wanbo\Source\Repos\01_LinqHomework\LinqHomeWork_01\bin\Debug\LinqHomeWork_01.exe
 C:\Users\wanbo\Source\Repos\01_LinqHomework\LinqHomeWork_01\bin\Debug\LinqHomeWork_01.pdb
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\EntityFramework.dll
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\EntityFramework.SqlServer.dll
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\EntityFramework.xml
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\EntityFramework.SqlServer.xml
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\obj\Debug\MyHomeWork.Frm作業_3.resources
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\obj\Debug\LinqHomeWork_01.csproj.CopyComplete
