@@ -1,4 +1,5 @@
-﻿using MyHomeWork;
+﻿using LinqLabs;
+using MyHomeWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace LinqHomeWork_01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm作業_3());
+            Application.Run(new Frm考試());
         }
     }
 }

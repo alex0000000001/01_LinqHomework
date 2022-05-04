@@ -185,10 +185,10 @@ namespace MyHomeWork
             }
 
         }
-        bool textchange;
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textchange = true;
-        }
+        //bool textchange;
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //    textchange = true;
+        //}
     }
 }

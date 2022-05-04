@@ -37,3 +37,4 @@ C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\En
 C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\bin\Debug\zh-Hant\EntityFramework.resources.dll
 C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\obj\Debug\MyHomeWork.Frm作業_3.resources
 C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\obj\Debug\LinqHomeWork_01.csproj.CopyComplete
+C:\ADO.NET\作業區\alex0000000001\01_LinqHomework\LinqHomeWork_01\obj\Debug\LinqLabs.Frm考試.resources
