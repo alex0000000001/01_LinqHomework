@@ -103,21 +103,48 @@ namespace LinqLabs
             // 每年 總銷售分析 圖
             // 每月 總銷售分析 圖
 
+            var q = from o in dbContext.Order_Details.AsEnumerable()
+                    group o by new { o.Order.OrderDate.Value.Year, o.Order.OrderDate.Value.Month } into g
+
+                    select new
+                    {
+
+                        Month = g.Key.Year + "年 / " + g.Key.Month + "月",
+                        Total = $"{g.Sum(p => p.UnitPrice * p.Quantity * (decimal)(1 - p.Discount)):c2}"
+                     };
 
 
-            var q = (from o in dbContext.Order_Details.AsEnumerable()
+            var q2 = from o in dbContext.Order_Details.AsEnumerable()
                      group o by o.Order.OrderDate.Value.Year into g
+
                      select new
                      {
-                         Year = g.Key,
+                         years = g.Key + "年",
                          Total = $"{g.Sum(p => p.UnitPrice * p.Quantity * (decimal)(1 - p.Discount)):c2}"
-                     })/*.OrderBy(p => p.Year)*/;
+                     };
+
 
 
             chart1.DataSource = q.ToList();
-            chart1.Series[0].XValueMember = "Year";
+            chart1.Series[0].XValueMember = "Month";
             chart1.Series[0].YValueMembers = "Total";
-            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            chart1.Series[1].XValueMember = "Month";
+            chart1.Series[1].YValueMembers = "Total";
+            chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+
+            chart2.DataSource = q2.ToList();
+            chart2.Series[0].XValueMember = "years";
+            chart2.Series[0].YValueMembers = "Total";
+            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+            chart2.Series[1].XValueMember = "years";
+            chart2.Series[1].YValueMembers = "Total";
+            chart2.Series[1].IsValueShownAsLabel = true;
+            chart2.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
         }
     }
 }
